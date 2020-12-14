@@ -139,7 +139,7 @@ func (svc *service) Unlink(ctx context.Context, userUUID, method string) error {
 
 type Option func(*service)
 
-func RegisterAuthProvider(name string, authProvider AuthProvider) Option {
+func WithAuthProvider(name string, authProvider AuthProvider) Option {
 	return func(svc *service) {
 		if _, ok := svc.authProviders[name]; ok {
 			panic("duplicate auth provider registered")
