@@ -1,4 +1,4 @@
-package user
+package usersvc
 
 import (
 	"context"
@@ -11,7 +11,7 @@ import (
 type service struct {
 	repo          Repository
 	authProviders map[string]AuthProvider
-	authSvc       auth.Service
+	authSvc       authsvc.Service
 }
 
 func (svc *service) GetUser(ctx context.Context, userUUID string) (*Entity, error) {
@@ -137,7 +137,7 @@ func (svc *service) Unlink(ctx context.Context, userUUID, method string) error {
 	return nil
 }
 
-func New(repo Repository, authSvc auth.Service, options ...Option) Service {
+func New(repo Repository, authSvc authsvc.Service, options ...Option) Service {
 	svc := service{
 		repo:          repo,
 		authSvc:       authSvc,

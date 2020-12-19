@@ -1,3 +1,3 @@
-package user
+package usersvc
 
 type Middleware func(Service) Service

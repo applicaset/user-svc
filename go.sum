@@ -1,5 +1,9 @@
 github.com/applicaset/auth-svc v0.0.0-20201214153722-9254cc33eba8 h1:LXVHdIy98N/kxQ3e3NMmfAADWkkEJnb67vAL3w7qyYc=
 github.com/applicaset/auth-svc v0.0.0-20201214153722-9254cc33eba8/go.mod h1:Ydytics1q6tn76vCA6HaMnGLS780WLkblRNCxjAkUzE=
+github.com/applicaset/auth-svc v0.0.0-20201219101142-42c5461e6829 h1:Kv0JvfjDj7bquEVNaQ7MhkiiTKuEe6jV5MsDXIMy504=
+github.com/applicaset/auth-svc v0.0.0-20201219101142-42c5461e6829/go.mod h1:Ydytics1q6tn76vCA6HaMnGLS780WLkblRNCxjAkUzE=
+github.com/applicaset/auth-svc v0.0.0-20201219102659-b5ed46d1e976 h1:7ZHT6bMobphVZQiIX6hVoJQ9VS5HCj2VWtFX3uVF7Hk=
+github.com/applicaset/auth-svc v0.0.0-20201219102659-b5ed46d1e976/go.mod h1:Ydytics1q6tn76vCA6HaMnGLS780WLkblRNCxjAkUzE=
 github.com/google/uuid v1.1.2 h1:EVhdT+1Kseyi1/pUmXKaFxYsDNy9RQYkMWRH68J/W7Y=
 github.com/google/uuid v1.1.2/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/nasermirzaei89/jwt v0.0.0-20191012203123-932fbb1484a6 h1:IMsMpjLnF5YmGOui+SI2GyHUPpG9b5UmQDwTb7686OU=
