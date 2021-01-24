@@ -38,7 +38,7 @@ func (svc *service) Login(ctx context.Context, method string, args map[string]in
 		return nil, errors.Wrap(err, "error on validate auth data")
 	}
 
-	if validate.Validated() {
+	if !validate.Validated() {
 		return nil, ErrInvalidAuthData{}
 	}
 
@@ -94,7 +94,7 @@ func (svc *service) Link(ctx context.Context, userUUID, method string, args map[
 		return errors.Wrap(err, "error on validate auth data")
 	}
 
-	if validate.Validated() {
+	if !validate.Validated() {
 		return ErrInvalidAuthData{}
 	}
 
