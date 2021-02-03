@@ -47,12 +47,16 @@ func (svc *service) Login(ctx context.Context, method string, args map[string]in
 		return nil, errors.Wrap(err, "error on find user by auth method and id")
 	}
 
+	methodAuthData := map[string]interface{}{
+		"id": validate.ID(),
+	}
+
 	if entity == nil {
 		entity = &Entity{
 			UUID:         uuid.New().String(),
 			RegisteredAt: time.Now(),
 			AuthData: map[string]interface{}{
-				method: validate,
+				method: methodAuthData,
 			},
 		}
 
@@ -61,7 +65,7 @@ func (svc *service) Login(ctx context.Context, method string, args map[string]in
 			return nil, errors.Wrap(err, "error on create new user")
 		}
 	} else {
-		entity.AuthData[method] = validate
+		entity.AuthData[method] = methodAuthData
 		err = svc.repo.Update(ctx, entity.UUID, *entity)
 		if err != nil {
 			return nil, errors.Wrap(err, "error on update user by uuid")
@@ -107,7 +111,9 @@ func (svc *service) Link(ctx context.Context, userUUID, method string, args map[
 		return ErrUserNotFound{UUID: userUUID}
 	}
 
-	entity.AuthData[method] = validate
+	entity.AuthData[method] = map[string]interface{}{
+		"id": validate.ID(),
+	}
 
 	err = svc.repo.Update(ctx, entity.UUID, *entity)
 	if err != nil {
