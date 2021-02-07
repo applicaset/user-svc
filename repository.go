@@ -7,4 +7,5 @@ type Repository interface {
 	Find(ctx context.Context, uuid string) (res *Entity, err error)
 	FindByAuthMethodAndID(ctx context.Context, method, id string) (res *Entity, err error)
 	Update(ctx context.Context, uuid string, entity Entity) (err error)
+	List(ctx context.Context) (res []*Entity, err error)
 }

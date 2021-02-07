@@ -10,6 +10,7 @@ type Service interface {
 	Login(ctx context.Context, method string, args map[string]interface{}) (res *LoginResponse, err error)
 	Link(ctx context.Context, userUUID, method string, args map[string]interface{}) (err error)
 	Unlink(ctx context.Context, userUUID, method string) (err error)
+	ListUsers(ctx context.Context) (res []*Entity, err error)
 }
 
 type LoginResponse struct {

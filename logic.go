@@ -143,6 +143,15 @@ func (svc *service) Unlink(ctx context.Context, userUUID, method string) error {
 	return nil
 }
 
+func (svc *service) ListUsers(ctx context.Context) ([]*Entity, error) {
+	res, err := svc.repo.List(ctx)
+	if err != nil {
+		return nil, errors.Wrap(err, "error on list users")
+	}
+
+	return res, nil
+}
+
 func New(repo Repository, authSvc authsvc.Service, options ...Option) Service {
 	svc := service{
 		repo:          repo,
